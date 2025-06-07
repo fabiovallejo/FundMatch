@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - FundMatch</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="media/logo.png" alt="">
+                <h2>FundMatch</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#como-funciona">Cómo Funciona</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login">Iniciar Sesión</button>
+                <button class="btn-register">Registrarse</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Registration Section -->
+    <main class="register-main">
+        <div class="register-container">
+            <div class="register-content">
+                <!-- Registration Form -->
+                <div class="register-form-section">
+                    <div class="form-header">
+                        <h1 class="form-title">Crear tu Cuenta</h1>
+                        <p class="form-subtitle">Únete a FundMatch y conecta con inversionistas o encuentra oportunidades de inversión</p>
+                    </div>
+
+                    <!-- User Type Selection -->
+                    <div class="user-type-selection">
+                        <div class="type-tabs">
+                            <button class="type-tab active" data-type="emprendedor">
+                                <span class="tab-icon">💡</span>
+                                <span class="tab-text">Emprendedor</span>
+                            </button>
+                            <button class="type-tab" data-type="colaborador">
+                                <span class="tab-icon">🤝</span>
+                                <span class="tab-text">Colaborador</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <form class="register-form" id="registerForm">
+                        <!-- Basic Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Información Personal</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">Nombre</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Apellido</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" id="password" name="password" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <!-- Entrepreneur Specific Fields -->
+                        <div class="form-section emprendedor-fields">
+                            <h3 class="section-title">Información del Emprendimiento</h3>
+                            <div class="form-group">
+                                <label for="companyName" class="form-label">Nombre de la Empresa/Proyecto</label>
+                                <input type="text" id="companyName" name="companyName" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="industry" class="form-label">Industria</label>
+                                <select id="industry" name="industry" class="form-select">
+                                    <option value="">Selecciona una industria</option>
+                                    <option value="tecnologia">Tecnología</option>
+                                    <option value="salud">Salud</option>
+                                    <option value="fintech">Fintech</option>
+                                    <option value="educacion">Educación</option>
+                                    <option value="comercio">Comercio</option>
+                                    <option value="manufactura">Manufactura</option>
+                                    <option value="servicios">Servicios</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="stage" class="form-label">Etapa del Proyecto</label>
+                                <select id="stage" name="stage" class="form-select">
+                                    <option value="">Selecciona la etapa</option>
+                                    <option value="idea">Idea</option>
+                                    <option value="prototipo">Prototipo</option>
+                                    <option value="mvp">MVP</option>
+                                    <option value="operativo">Operativo</option>
+                                    <option value="crecimiento">En Crecimiento</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fundingNeeded" class="form-label">Monto de Financiamiento Requerido (USD)</label>
+                                <input type="number" id="fundingNeeded" name="fundingNeeded" class="form-input" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="description" class="form-label">Descripción del Proyecto</label>
+                                <textarea id="description" name="description" class="form-textarea" rows="4" placeholder="Describe brevemente tu proyecto o idea de negocio..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Collaborator Specific Fields -->
+                        <div class="form-section colaborador-fields" style="display: none;">
+                            <h3 class="section-title">Información Profesional</h3>
+                            <div class="form-group">
+                                <label for="profession" class="form-label">Profesión</label>
+                                <input type="text" id="profession" name="profession" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="experience" class="form-label">Años de Experiencia</label>
+                                <select id="experience" name="experience" class="form-select">
+                                    <option value="">Selecciona tu experiencia</option>
+                                    <option value="0-2">0-2 años</option>
+                                    <option value="3-5">3-5 años</option>
+                                    <option value="6-10">6-10 años</option>
+                                    <option value="11-15">11-15 años</option>
+                                    <option value="16+">16+ años</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="expertise" class="form-label">Área de Expertise</label>
+                                <select id="expertise" name="expertise" class="form-select">
+                                    <option value="">Selecciona tu área</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="finanzas">Finanzas</option>
+                                    <option value="tecnologia">Tecnología</option>
+                                    <option value="ventas">Ventas</option>
+                                    <option value="recursos-humanos">Recursos Humanos</option>
+                                    <option value="operaciones">Operaciones</option>
+                                    <option value="legal">Legal</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="investmentCapacity" class="form-label">Capacidad de Inversión (USD)</label>
+                                <select id="investmentCapacity" name="investmentCapacity" class="form-select">
+                                    <option value="">Selecciona tu rango</option>
+                                    <option value="1000-5000">$1,000 - $5,000</option>
+                                    <option value="5000-10000">$5,000 - $10,000</option>
+                                    <option value="10000-25000">$10,000 - $25,000</option>
+                                    <option value="25000-50000">$25,000 - $50,000</option>
+                                    <option value="50000+">$50,000+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bio" class="form-label">Biografía Profesional</label>
+                                <textarea id="bio" name="bio" class="form-textarea" rows="4" placeholder="Cuéntanos sobre tu experiencia y cómo puedes ayudar a los emprendedores..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-section">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" class="form-checkbox" required>
+                                <label for="terms" class="checkbox-label">
+                                    Acepto los <a href="#" class="link">Términos y Condiciones</a> y la <a href="#" class="link">Política de Privacidad</a>
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox">
+                                <label for="newsletter" class="checkbox-label">
+                                    Quiero recibir actualizaciones y noticias de FundMatch
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary btn-large">Crear Cuenta</button>
+                        </div>
+
+                        <!-- Login Link -->
+                        <div class="form-footer">
+                            <p class="login-link">¿Ya tienes una cuenta? <a href="#" class="link">Iniciar Sesión</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Side Information -->
+                <div class="register-info-section">
+                    <div class="info-content">
+                        <h2 class="info-title">¿Por qué unirte a FundMatch?</h2>
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚀</div>
+                                <div class="benefit-content">
+                                    <h4 class="benefit-title">Acelera tu Crecimiento</h4>
+                                    <p class="benefit-description">Conecta con inversionistas y mentores que pueden impulsar tu negocio</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🤝</div>
+                                <div class="benefit-content">
+                                    <h4 class="benefit-title">Red de Contactos</h4>
+                                    <p class="benefit-description">Accede a una comunidad de emprendedores y profesionales</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💡</div>
+                                <div class="benefit-content">
+                                    <h4 class="benefit-title">Herramientas Profesionales</h4>
+                                    <p class="benefit-description">Utiliza nuestras herramientas para gestionar tu proyecto</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📈</div>
+                                <div class="benefit-content">
+                                    <h4 class="benefit-title">Oportunidades de Inversión</h4>
+                                    <p class="benefit-description">Encuentra las mejores oportunidades según tu perfil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FundMatch</h3>
+                    <p>FundMatch conecta a emprendedores con aliados estratégicos dispuestos a impulsar ideas con impacto.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Producto</h4>
+                    <ul>
+                        <li><a href="#">Características</a></li>
+                        <li><a href="#">Precios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FundMatch. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

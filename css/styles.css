@@ -155,14 +155,14 @@ body {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 8rem;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
@@ -182,68 +182,23 @@ body {
     line-height: 1.8;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn-primary {
-    background: var(--gradient);
-    border: none;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: var(--shadow);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    padding: 1rem 2rem;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-secondary:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-3px);
-}
-
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-image img {
+    width: 40em;
 }
 
 .hero-placeholder {
-    width: 400px;
-    height: 400px;
-    background: var(--gradient);
-    border-radius: 50%;
+    width: 37em;
+    height: 25.5em;
+    border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: var(--shadow-hover);
-    animation: float 3s ease-in-out infinite;
+    animation: float 5s ease-in-out infinite;
 }
 
-.hero-placeholder i {
-    font-size: 6rem;
-    color: white;
+.hero-placeholder img {
+    width: 35em;
+    border-radius: 25px;
 }
 
 @keyframes float {
@@ -355,7 +310,7 @@ body {
 .benefits-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: center;
 }
 
@@ -398,19 +353,17 @@ body {
 }
 
 .benefit-placeholder {
-    width: 350px;
-    height: 350px;
-    background: var(--gradient);
-    border-radius: var(--border-radius);
+    width: 34rem;
+    height: 23rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: var(--shadow-hover);
 }
 
-.benefit-placeholder i {
-    font-size: 5rem;
-    color: white;
+.benefit-placeholder img {
+    width: 33rem;
+    border-radius: 20px;
+    animation:  5s ease-in-out infinite;
 }
 
 /* User Types Section */
@@ -429,7 +382,7 @@ body {
 .user-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
 }
 
 .user-card {
@@ -786,4 +739,9 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
    background: var(--primary-color);
+}
+
+.registro {
+    background: var(--gradient-light);
+    height: 100vh;
 }
