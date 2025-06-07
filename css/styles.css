@@ -53,6 +53,14 @@ body {
     margin: 0 auto;
 }
 
+.nav-brand {
+    display: inline-flex;
+}
+
+.nav-brand img {
+    width: 2.9em;
+}
+
 .nav-brand h2 {
     background: var(--gradient);
     -webkit-background-clip: text;
