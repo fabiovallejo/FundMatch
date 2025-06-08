@@ -112,25 +112,6 @@ function createParticleEffect() {
     }
 }
 
-function animateStats() {
-    const stats = document.querySelectorAll('.stat h3');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const finalValue = target.textContent;
-                const numericValue = parseInt(finalValue.replace(/\D/g, ''));
-                
-                animateNumber(target, 0, numericValue, finalValue, 2000);
-                observer.unobserve(target);
-            }
-        });
-    });
-    
-    stats.forEach(stat => observer.observe(stat));
-}
-
-
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         createParticleEffect();
@@ -159,3 +140,63 @@ const utils = {
     },
 
 };
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const typeTabs = document.querySelectorAll('.type-tab');
+    const emprendedorFields = document.querySelector('.emprendedor-fields');
+    const colaboradorFields = document.querySelector('.colaborador-fields');
+
+    if (typeTabs.length > 0) {
+        typeTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                typeTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const userType = tab.getAttribute('data-type');
+                if (userType === 'emprendedor') {
+                    if (emprendedorFields) emprendedorFields.style.display = 'block';
+                    if (colaboradorFields) colaboradorFields.style.display = 'none';
+                } else {
+                    if (emprendedorFields) emprendedorFields.style.display = 'none';
+                    if (colaboradorFields) colaboradorFields.style.display = 'block';
+                }
+            });
+        });
+    }
+
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            
+            if (password && confirmPassword) {
+                if (password.value !== confirmPassword.value) {
+                    alert('Las contraseñas no coinciden');
+                    return;
+                }
+            }
+            
+            const requiredFields = registerForm.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('error');
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+            
+            if (!isValid) {
+                alert('Por favor, completa todos los campos requeridos');
+                return;
+            }
+        });
+    }
+});

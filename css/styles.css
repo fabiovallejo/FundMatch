@@ -33,7 +33,6 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -126,23 +125,24 @@ body {
 }
 
 .btn-register {
-    background: var(--gradient);
+    background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+    color: var(--bg-light);
     border: none;
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: var(--border-radius);
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    border-radius: 10px;
     cursor: pointer;
-    transition: var(--transition);
-    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.3);
+    text-decoration: none;
 }
 
 .btn-register:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 6px 20px rgba(var(--primary-color-rgb), 0.4);
 }
 
-/* Hero Section */
 .hero {
     padding: 8rem 2rem 4rem;
     background: var(--gradient-light);
@@ -234,7 +234,6 @@ body {
     font-weight: 500;
 }
 
-/* How it Works Section */
 .how-it-works {
     padding: 6rem 0;
     background: white;
@@ -301,7 +300,6 @@ body {
     line-height: 1.6;
 }
 
-/* Benefits Section */
 .benefits {
     padding: 6rem 0;
     background: var(--bg-light);
@@ -366,7 +364,6 @@ body {
     animation:  5s ease-in-out infinite;
 }
 
-/* User Types Section */
 .user-types {
     padding: 6rem 0;
     background: white;
@@ -464,7 +461,6 @@ body {
     box-shadow: var(--shadow);
 }
 
-/* Testimonials Section */
 .testimonials {
     padding: 6rem 0;
     background: var(--bg-light);
@@ -556,7 +552,6 @@ body {
     background-color: var(--primary-color);
 }
 
-/* CTA Section */
 .cta {
     padding: 6rem 0;
     background: var(--gradient);
@@ -617,7 +612,6 @@ body {
    transform: translateY(-3px);
 }
 
-/* Footer */
 .footer {
    background: var(--text-dark);
    color: white;
@@ -702,7 +696,6 @@ body {
    color: #9ca3af;
 }
 
-/* Animations */
 @keyframes fadeInUp {
    from {
        opacity: 0;
@@ -718,12 +711,10 @@ body {
    animation: fadeInUp 0.6s ease-out;
 }
 
-/* Smooth scrolling */
 html {
    scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
    width: 8px;
 }
@@ -743,5 +734,190 @@ html {
 
 .registro {
     background: var(--gradient-light);
-    height: 100vh;
+}
+
+.register-main {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.register-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 3.5rem;
+    margin: 0 auto;
+}
+
+.form-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.type-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    background: rgba(var(--primary-color-rgb), 0.1);
+    border-radius: 12px;
+    max-width: 350px;
+    margin: 0 auto 2rem auto;
+}
+
+.type-tab {
+    flex: 1;
+    background: transparent;
+    color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.type-tab:hover {
+    transform: translateY(-2px);
+}
+
+.type-tab.active {
+    background: var(--primary-color);
+    color: var(--bg-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(var(--primary-color-rgb), 0.2);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-input, .form-select, .form-nombre {
+    background: var(--bg-light);
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.form-input, .form-select {
+    min-height: 3.2rem;
+}
+
+.form-nome {
+    min-height: 3.2rem;
+}
+
+.form-input:focus, 
+.form-select:focus, 
+.form-nombre:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+    transform: translateY(-1px);
+}
+
+.form-input:hover:not(:focus), 
+.form-select:hover:not(:focus), 
+.form-nombre:hover:not(:focus) {
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: rgba(var(--primary-color-rgb), 0.05);
+    border-radius: 8px;
+}
+
+.form-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-label {
+    flex: 1;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.checkbox-label .link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.checkbox-label .link:hover {
+    text-decoration: underline;
+}
+
+.form-footer {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(var(--primary-color-rgb), 0.1);
+}
+
+.login-link {
+    color: var(--text-muted);
+}
+
+.login-link .link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link .link:hover {
+    text-decoration: underline;
 }
